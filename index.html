@@ -111,6 +111,12 @@
       setTimeout(() => overlay.style.display = 'none', 3000);
     });
 
+    // form
+    document.querySelector("form").addEventListener("submit", function(e) {
+      e.preventDefault(); // Stops the page from reloading
+      alert("Message sent! (Not really, just a placeholder)");
+    });
+    
     // Modal logic
     const projects = document.querySelectorAll('.project');
     const modals = document.querySelectorAll('.modal');
