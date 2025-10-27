@@ -252,7 +252,7 @@ footer {
 
 @keyframes fadeOut {
   from {
-    opacity: 0.2;
+    opacity: 1;
   }
   to {
     opacity: 0;
