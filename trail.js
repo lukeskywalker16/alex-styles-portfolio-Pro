@@ -1,4 +1,3 @@
-
 document.addEventListener("mousemove", (e) => {
   const trail = document.createElement("div");
   trail.className = "trail";
