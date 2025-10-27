@@ -12,5 +12,5 @@ document.addEventListener("mousemove", (e) => {
 
 document.querySelector("form").addEventListener("submit", function(e) {
   e.preventDefault(); // Stops the page from reloading
-  alert("Message sent! (Not really, but this is a placeholder)");
+  alert("Your message has been launched into the void. We’ll let you know if it echoes back.”);
 });
