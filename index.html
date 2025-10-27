@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Styles | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- WELCOME OVERLAY -->
+  <div id="welcome-overlay">
+    <div class="welcome-text">OH HEY, IT'S YOU!<br>WELCOME TO MY SITE – ALEX</div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Alex Styles</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm Alex Styles — a digital designer blending minimalism with edge. I craft visual stories through sleek, immersive interfaces that make users feel something real. I believe that good design is equal parts emotion, movement, and clarity.</p>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="project" data-project="bar88">
+        <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67ddaf?auto=format&fit=crop&w=600&q=80" alt="Bar 88" />
+        <div class="overlay">Bar 88</div>
+      </div>
+      <div class="project" data-project="exclub">
+        <img src="https://images.unsplash.com/photo-1582719478181-2cf4e1b0c1f3?auto=format&fit=crop&w=600&q=80" alt="ExCLUB" />
+        <div class="overlay">ExCLUB</div>
+      </div>
+      <div class="project" data-project="varietybar">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="VarietyBar" />
+        <div class="overlay">VarietyBar</div>
+      </div>
+      <div class="project" data-project="sohohouse">
+        <img src="https://images.unsplash.com/photo-1568640347023-25d55aa68a18?auto=format&fit=crop&w=600&q=80" alt="SOHO House" />
+        <div class="overlay">SOHO House</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Alex Styles — All rights reserved.</p>
+  </footer>
+
+  <!-- MODAL WINDOWS -->
+  <div class="modal" id="bar88">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Bar 88</h3>
+      <p>A subterranean cocktail bar that fuses concrete minimalism with glowing amber tones. Designed to feel like a secret — sophisticated yet raw.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="exclub">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>ExCLUB</h3>
+      <p>An experimental nightlife experience built around sound-reactive visuals and generative light patterns — the intersection of art and motion.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="varietybar">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>VarietyBar</h3>
+      <p>An adaptive bar identity system where every night rebrands itself — same energy, fresh look. UI meets atmosphere.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="sohohouse">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>SOHO House</h3>
+      <p>Design direction for a private members’ hub that balances luxury minimalism with human warmth and authenticity.</p>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    // Welcome animation
+    window.addEventListener('load', () => {
+      const overlay = document.getElementById('welcome-overlay');
+      setTimeout(() => overlay.classList.add('fade-out'), 1500);
+      setTimeout(() => overlay.style.display = 'none', 3000);
+    });
+
+    // Modal logic
+    const projects = document.querySelectorAll('.project');
+    const modals = document.querySelectorAll('.modal');
+    const closes = document.querySelectorAll('.close');
+
+    projects.forEach(project => {
+      project.addEventListener('click', () => {
+        document.getElementById(project.dataset.project).classList.add('active');
+      });
+    });
+
+    closes.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.modal').classList.remove('active');
+      });
+    });
+
+    window.addEventListener('click', (e) => {
+      modals.forEach(modal => {
+        if (e.target === modal) modal.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
