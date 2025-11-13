@@ -1,253 +1,142 @@
-/* Root styling */
-:root {
-  --burnt-orange: #d96b29;
-  --deep-grey: #1e1e1e;
-  --light-grey: #e0e0e0;
-  --font-main: "Poppins", sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Styles | Portfolio</title>
+  styles.css
+</head>
+<body>
 
-/* Reset + base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <!-- WELCOME OVERLAY -->
+  <div id="welcome-overlay">
+    <div class="welcome-text">OH HEY, IT'S YOU!<br>WELCOME TO MY SITE – ALEX</div>
+  </div>
 
-body {
-  font-family: var(--font-main);
-  background: linear-gradient(135deg, var(--deep-grey), #000);
-  color: var(--light-grey);
-  line-height: 1.6;
-  overflow-x: hidden;
-  transition: background 0.3s ease;
-}
+  <!-- HEADER -->
+  <header>
+    <h1>ALEX STYLES</h1>
+    <nav>
+      #aboutAbout</a>
+      #portfolioPortfolio</a>
+      <a href="#contact">Contact</v>
+  </header>
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  position: sticky;
-  top: 0;
-  background: rgba(30, 30, 30, 0.9);
-  backdrop-filter: blur(10px);
-  z-index: 100;
-}
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm Alex Styles — a digital designer blending minimalism with edge. I craft visual stories through sleek, immersive interfaces that make users feel something real. I believe that good design is equal parts emotion, movement, and clarity.</p>
+  </section>
 
-header h1 {
-  color: var(--burnt-orange);
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-}
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="project" data-project="bar88">
+        <img src="https://raw.githubusercontent.com/ler16/alex-styles-portfolio-Pro/refs/heads/main/88.jpeg
+        <div class="overlay">Bar 88</div>
+      </div>
+      <div class="project" data-project="exclub">
+        <img src="https://raw.githubusercontent.com/lukeskywalker16/alex-styles-portfolioheads/main/excl.jpeg
+        <div class="overlay">ExCLUB</div>
+      </div>
+      <div class="project" data-project="varietybar">
+        https://raw.githubusercontent.com/lukeskywalker16/alex-styles-portfolio-Pro/refs/heads/main/images32.jpeg
+        <div class="overlay">VarietyBar</div>
+      </div>
+      <div class="project" data-project="sohohouse">
+        <img src="https://raw.githubusercontent.com/lukeskywalker16/alex-styles-portfolio-Pro/refs/heads/main/SOHO%20house.webp" alt="SO="overlay">SOHO House</div>
+      </div>
+    </div>
+  </section>
 
-nav a {
-  margin: 0 1rem;
-  color: var(--light-grey);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-nav a:hover {
-  color: var(--burnt-orange);
-}
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Alex Styles — All rights reserved.</p>
+  </footer>
 
-/* Sections */
-section {
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
+  <!-- MODALS -->
+  <div class="modal" id="bar88">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Bar 88</h3>
+      <p>A subterranean cocktail bar that fuses concrete minimalism with glowing amber tones. Designed to feel like a secret — sophisticated yet raw.</p>
+    </div>
+  </div>
 
-h2 {
-  font-size: 2rem;
-  color: var(--burnt-orange);
-  margin-bottom: 1rem;
-}
+  <div class="modal" id="exclub">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>ExCLUB</h3>
+      <p>An experimental nightlife experience built around sound-reactive visuals and generative light patterns — the intersection of art and motion.</p>
+    </div>
+  </div>
 
-/* Portfolio grid */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
+  <div class="modal" id="varietybar">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>VarietyBar</h3>
+      <p>An adaptive bar identity system where every night rebrands itself — same energy, fresh look. UI meets atmosphere.</p>
+    </div>
+  </div>
 
-.project {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 12px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+  <div class="modal" id="sohohouse">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>SOHO House</h3>
+      <p>Design direction for a private members’ hub that balances luxury minimalism with human warmth and authenticity.</p>
+    </div>
+  </div>
 
-.project img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
+  <!-- SCRIPTS -->
+  <script>
+    // Welcome animation
+    window.addEventListener('load', () => {
+      const overlay = document.getElementById('welcome-overlay');
+      setTimeout(() => overlay.classList.add('fade-out'), 1500);
+      setTimeout(() => overlay.style.display = 'none', 3000);
+    });
 
-.project:hover img {
-  transform: scale(1.1);
-  opacity: 0.7;
-}
+    // Form submission
+    document.querySelector("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Your message has been launched into the void. We’ll let you know if it echoes back");
+    });
 
-.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  color: var(--light-grey);
-  font-weight: bold;
-  letter-spacing: 1px;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.4s ease;
-}
+    // Modal logic
+    const projects = document.querySelectorAll('.project');
+    const modals = document.querySelectorAll('.modal');
+    const closes = document.querySelectorAll('.close');
 
-.project:hover .overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
+    projects.forEach(project => {
+      project.addEventListener('click', () => {
+        document.getElementById(project.dataset.project).classList.add('active');
+      });
+    });
 
-/* Contact form */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+    closes.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.modal').classList.remove('active');
+      });
+    });
 
-input, textarea {
-  background: #2a2a2a;
-  border: none;
-  padding: 1rem;
-  color: var(--light-grey);
-  border-radius: 8px;
-  resize: none;
-}
-
-button {
-  background: var(--burnt-orange);
-  border: none;
-  padding: 1rem;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-  background: #ff8a3c;
-  transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #111;
-  color: #777;
-  font-size: 0.9rem;
-}
-
-/* Modal windows */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 200;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 0.3s ease;
-}
-
-.modal.active {
-  display: flex;
-}
-
-.modal-content {
-  background: #222;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 500px;
-  text-align: center;
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
-  animation: slideUp 0.4s ease;
-}
-
-.close {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  font-size: 1.5rem;
-  color: var(--burnt-orange);
-  cursor: pointer;
-}
-
-/* Welcome overlay */
-#welcome-overlay {
-  position: fixed;
-  z-index: 500;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(135deg, var(--burnt-orange), var(--deep-grey));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  letter-spacing: 2px;
-  transition: opacity 1s ease;
-}
-
-#welcome-overlay.fade-out {
-  opacity: 0;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .welcome-text {
-    font-size: 1.5rem;
-    padding: 1rem;
-  }
-}
-
-.trail {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgba(255, 165, 0, 0.3);
-  box-shadow: 0 0 20px 10px rgba(255, 165, 0, 0.4);
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-  transition: transform 1s ease, opacity 1s ease;
-}
+    window.addEventListener('click', (e) => {
+      modals.forEach(modal => {
+        if (e.target === modal) modal.classList.remove('active');
+      });
+    });
+  </script>
+  trail.js</script>
+</body>
+</html>
