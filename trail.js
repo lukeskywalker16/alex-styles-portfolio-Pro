@@ -5,6 +5,13 @@ document.addEventListener("mousemove", (e) => {
   trail.style.top = `${e.clientY}px`;
   document.body.appendChild(trail);
 
+  // Animate shrink and fade
+  requestAnimationFrame(() => {
+    trail.style.transform = "translate(-50%, -50%) scale(0.5)";
+    trail.style.opacity = "0";
+  });
+
+  // Remove after animation completes
   setTimeout(() => {
     trail.remove();
   }, 1000);
